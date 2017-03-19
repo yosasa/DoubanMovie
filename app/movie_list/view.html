@@ -1,0 +1,30 @@
+<!--电影列表开始-->
+<div class="list">
+    <ul>
+        <li ng-repeat="item in data.subjects">
+            <a href="#/details/{{item.id}}">
+                <img ng-src="{{item.images.large}}" alt="">
+            </a>
+            <div class="meta">
+                <h4><span>{{item.title}}</span> <em style="background-color: #e6e6e6" ng-if="item.rating.average!=0">{{item.rating.average}}</em><em ng-if="item.rating.average==0" style="color:#999">暂无评分</em></h4>
+                <div class="otherinfo">类型:<span>{{item.genres.join("、")}}</span></div>
+            </div>
+        </li>
+    </ul>
+    <div class="paging">
+        <label>共{{total}}部影片,第{{page}}/{{maxPage}}页    </label>
+        <!-- 加上disable类样式，表示按钮禁用状态 -->
+        <button class="next btn btn-large btn-primary" ng-class="{'disable': nowPage <= 1}" ng-click="goPage(1)">首页</button>
+        <button class="prev btn btn-large btn-primary" ng-class="{'disable': nowPage <= 1}" ng-click="goPage(nowPage - 1)">上一页</button>
+        <button class="next btn btn-large btn-primary" ng-class="{'disable': nowPage >= maxPage}" ng-click="goPage(nowPage + 1)">下一页</button>
+        <button class="next btn btn-large btn-primary" ng-class="{'disable': nowPage >= maxPage}" ng-click="goPage(maxPage)">尾页</button>
+    </div>
+
+</div>
+<!--电影列表结束-->
+<div class="spinner" ng-show='loading'>
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
+

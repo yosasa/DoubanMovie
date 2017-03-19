@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DoubanMovie">
+
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣电影</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- 让IE的文档模式永远都是最新 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta name="keywords" content="电影排行榜、新片排行榜、豆瓣电影250">
+    <meta name="description" content="豆瓣电影排行榜,提供最新电影排行榜和豆瓣电影TOP250">
+    <link rel = "Shortcut Icon" href=favicon.ico>
+    <!-- Loading Bootstrap -->
+    <link href="../css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="../css/flat-ui.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/wap.css">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="../js/vendor/html5shiv.js"></script>
+    <script src="../js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-controller='mainController'>
+<!--<div class="top" ng-controller='mainController'>
+    <nav class="nav">
+        <ul>
+            &lt;!&ndash;li中添加 active 类样式，显示焦点状态。&ndash;&gt;
+            &lt;!&ndash; 使用自定义指令来实现焦点状态的变化 &ndash;&gt;
+            <li id="home_page" auto-active><a href="#/home_page">首页</a></li>
+            <li auto-active><a href="#/in_theaters">正在热映</a></li>
+            <li auto-active><a href="#/coming_soon">即将上映</a></li>
+            <li auto-active><a href="#/top250">Top250</a></li>
+        </ul>
+    </nav>
+    <div class="search">
+        <form ng-submit="search()">
+            <input ng-model='query' class="my-input" type="text" placeholder="电影搜索">
+            <button>搜索</button>
+        </form>
+    </div>
+</div>-->
+            <!--header-->
+            <header class="container">
+                <div class="col-sm-12">
+                <div class="row">
+                        <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+                            <div class="navbar-header" auto-active>
+                                <a class="navbar-brand" href="#/home_page">豆瓣电影</a>
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                                    <span class="sr-only">Toggle navigation</span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                                <ul class="nav navbar-nav">
+                                    <li auto-active><a href="#/in_theaters" class="href">正在热映</a></li>
+                                    <li auto-active><a href="#/coming_soon" class="href">新片速递</a></li>
+                                    <li auto-active><a href="#/top250" class="href">TOP250</a></li>
+                                  <!--  <li auto-active><a href="#/weekly" class="href">口碑榜</a></li>
+                                    <li auto-active><a href="#/new_movies" class="href">新片榜</a></li>
+                                    <li auto-active><a href="#/us_box" class="href">北美票房榜</a></li>-->
+                                </ul>
+                                <form class="navbar-form navbar-right" role="search" ng-submit="search()">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input class="form-control" id="navbarInput-01" type="search" placeholder="搜索电影" ng-model="query">
+                                            <span class="input-group-btn"><button type="submit" class="btn"><span class="fui-search"></span></button></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div><!-- /.navbar-collapse -->
+                        </nav><!-- /navbar -->
+                </div> <!-- /row -->
+                </div>
+            </header>
+
+<div class="container">
+    <ng-view><ng-view>
+</div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/prefixfree.min.js"></script>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-route/angular-route.min.js"></script>
+    <script src="movie_list/movie_list.js"></script>
+    <script src="component/http-server.js"></script>
+    <script src="component/auto-active.js"></script>
+    <script src="home_page/home_page.js"></script>
+    <script src="search/search.js"></script>
+    <script src="details/details.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

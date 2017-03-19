@@ -1,0 +1,40 @@
+<!-- 电影详情开始 -->
+<ul class="pager col-sm-12">
+    <li class="previous">
+        <a href="javascript:history.back()">
+            <img src="http://www.bootcss.com/p/flat-ui/images/pager/previous.png">
+        </a>
+    </li>
+     <li class="pager-center col-sm-11"><h1>{{data.title}}</h1>
+     </li>
+</ul>
+<div class="detail">
+    <div class="dt-info">
+        <div class="dti-i"><img ng-src="{{data.images.large}}" alt=""></div>
+        <div class="dti-w">
+            <p><strong>片名：</strong>{{data.title}}</p>
+            <p>
+                <strong>导演：</strong>
+                <span ng-repeat="item in data.directors">{{item.name}} {{$last ? "" : "、"}}</span>
+            </p>
+            <p>
+                <strong>主演：</strong>
+                <span ng-repeat="item in data.casts">{{item.name}} {{$last ? "" : "、"}}</span>
+            </p>
+            <p><strong>类型：</strong>{{data.genres.join("、")}}</p>
+            <p><strong>国家：</strong>{{data.countries.join("、")}}</p>
+            <p><strong>评分：</strong>{{data.rating.average}}</p>
+            <p><strong>时间：</strong>{{data.year}}</p>
+        </div>
+    </div>
+    <div class="dtl">
+        <h3>剧情简介:</h3>
+        <p>{{data.summary}}</p>
+    </div>
+</div>
+<!-- 电影详情结束 -->
+<div class="spinner" ng-show='loading'>
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>

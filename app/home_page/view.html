@@ -1,0 +1,65 @@
+<div class="list">
+    <section>
+    <header>
+        <h2>  ▍正在热映</h2>
+        <a href="#/in_theaters">更多 〉</a>
+    </header>
+    <div class="section-content">
+        <ul class="row items">
+            <li ng-repeat="item in data1.subjects" class="item item__movie">
+                <a href="#/details/{{item.id}}">
+                    <img ng-src="{{item.images.large}}" alt="">
+                </a>
+                <div class="meta">
+                    <h4><span>{{item.title}}</span> <em ng-if="item.rating.average!=0" style="background-color: #e6e6e6" >{{item.rating.average}}</em><em ng-if="item.rating.average==0" style="color:#999">暂无评分</em></h4>
+                    <div class="otherinfo">类型:<span>{{item.genres.join("、")}}</span></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </section>
+    <section>
+        <header>
+            <h2>  ▍新片速递</h2>
+            <a href="#/coming_soon">更多 〉</a>
+        </header>
+        <div class="section-content">
+            <ul class="row items">
+                <li ng-repeat="item in data2.subjects" class="item item__movie">
+                    <a href="#/details/{{item.id}}">
+                        <img ng-src="{{item.images.large}}" alt="">
+                    </a>
+                    <div class="meta">
+                        <h4><span>{{item.title}}</span> <em ng-if="item.rating.average!=0"style="background-color: #e6e6e6" >{{item.rating.average}}</em><em ng-if="item.rating.average==0" style="color:#999">暂无评分</em></h4>
+                        <div class="otherinfo">类型:<span>{{item.genres.join("、")}}</span></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    </section>
+    <section>
+        <header>
+            <h2>  ▍TOP250</h2>
+            <a href="#/top250">更多 〉</a>
+        </header>
+        <div class="section-content">
+            <ul class="row items">
+                <li ng-repeat="item in data3.subjects" class="item item__movie">
+                    <a href="#/details/{{item.id}}">
+                        <img ng-src="{{item.images.large}}" alt="">
+                    </a>
+                    <div class="meta">
+                        <h4><span>{{item.title}}</span> <em ng-if="item.rating.average!=0"style="background-color: #e6e6e6" >{{item.rating.average}}</em><em ng-if="item.rating.average==0" style="color:#999">暂无评分</em></h4>
+                        <div class="otherinfo">类型:<span>{{item.genres.join("、")}}</span></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+<div class="spinner" ng-show='loading'>
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
