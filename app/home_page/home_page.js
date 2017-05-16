@@ -6,7 +6,7 @@
     // 2.0配置路由
     app.config(["$routeProvider", function($routeProvider) {
         $routeProvider.when('/home_page', {
-            templateUrl: "./home_page/view.html",
+            templateUrl: "app/home_page/view.html",
             controller: "home_pageController"
         })
     }])

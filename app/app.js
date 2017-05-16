@@ -2,7 +2,6 @@
     // start working!
     'use strict';
     var app = angular.module('DoubanMovie', [
-        'search',
         'details',
         'home_page',
         'movie_list',

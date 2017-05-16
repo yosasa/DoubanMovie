@@ -12,7 +12,7 @@
         $routeProvider.when('/:moduleName/:page?', {
             // 指定一个模板路径
             // 模板字符串的路径是根据主模块的路径开始计算的
-            templateUrl: "./movie_list/view.html",
+            templateUrl: "app/movie_list/view.html",
             controller: "movie_listController"
         })
     }])
@@ -54,10 +54,13 @@
 
             var start = (page - 1) * count;
 
-
+            if($routeParams.moduleName=="search"){
+                var url = "https://api.douban.com//v2/movie/search?q=" + $routeParams.q;
+            }else {
+                var url = "https://api.douban.com//v2/movie/" + $routeParams.moduleName;
+            }
             // 使用Myservice服务来请求第三方api
             // 需要动态改变的是这个url的锚点值
-            var url = "https://api.douban.com//v2/movie/" + $routeParams.moduleName;
             Myservice.jsonp(url, { start: start, count: count }, function(data) {
                 // 因为angular请求数据是异步的，而js执行是同步的，所以angular不能自动检测到数据模型已发生改变并渲染数据
                 // 这里就需要$apply方法去手动告诉angular数据模型发生改变时重新渲染数据

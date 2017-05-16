@@ -1,10 +1,3 @@
-/*
- * @Author: yan7
- * @Date:   2016-07-28 18:39:27
- * @Last Modified by:   yan7
- * @Last Modified time: 2016-07-30 00:49:37
- */
-
 (function(angular) {
     'use strict';
     // 1.0 创建details模块
@@ -13,7 +6,7 @@
     // 2.0 配置路由规格
     app.config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/details/:id', {
-            templateUrl: './details/view.html',
+            templateUrl: 'app/details/view.html',
             controller: 'detailsController'
         })
     }])

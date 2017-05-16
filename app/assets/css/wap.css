@@ -264,6 +264,8 @@ section{margin:0;overflow:hidden;background-color:#fff}section:first-child{paddi
 }
 .pager .previous{
     order: 1;
+    position: relative;
+    z-index: 3;
 }
 .pager .pager-center{
     order: 2;
@@ -320,7 +322,7 @@ section{margin:0;overflow:hidden;background-color:#fff}section:first-child{paddi
 
 
 /* 响应式------------------------------ */
-/*ipad pro*/
+/*ipad pro、surface*/
 
 @media screen and  (min-width: 1024px) {
     .top,
@@ -346,14 +348,14 @@ section{margin:0;overflow:hidden;background-color:#fff}section:first-child{paddi
 
 }
 
+
+/* ipad */
 @media screen and (min-width: 768px)and (max-width: 1024px){
-      .container .list ul li a img {
-        width: 21.5vw!important;
-        height: 31vw!important;
+    .container .list ul li a img {
+        width: 21.1vw!important;
+        height: 30vw!important;
     }
 }
-/* ipad */
-
  @media screen and (max-width: 1023px) and (min-width: 600px) {
     .top,
     .detail,
@@ -434,8 +436,8 @@ section{margin:0;overflow:hidden;background-color:#fff}section:first-child{paddi
 
 
     .container .list ul li a img {
-        width: 39vw;
-        height: 55.5vw;
+        width: 44.3vw;
+        height: 63vw;
     }
     label.ng-binding {
         display: block;
